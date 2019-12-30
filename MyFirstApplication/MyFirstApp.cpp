@@ -1,31 +1,39 @@
 #include <iostream>
 #include <string>
+#include <vector>
 
 using namespace std;
 
-int add(int num1, int num2) {
-	return num1 + num2;
-}
-
-void print(string text) {
-	cout << text << endl;
-}
-
-void print(int num1) {
-	cout << num1 << endl;
-}
-
-void print(int num1, int num2) {
-	cout << num1 << " " << num2 << endl;
-}
+struct Person {
+	string name;
+	int age;
+};
 
 int main() {
-	int result = add(52, 131);
+	Person person1;
 
-	cout << result << endl;
-	print("Hello world");
-	print(32);
-	print(45, 65);
+	person1.name = "Nick";
+	person1.age = 30;
 
-	return 0;
+	Person person2;
+
+	person2.name = "Ted";
+	person2.age = 46;
+
+	vector<Person> people = { person1, person2 };
+
+	Person person3;
+	person3.name = "Sally";
+	person3.age = 35;
+
+	people.push_back(person3);
+
+	for (int i = 0; i < people.size(); i++) {
+		cout << " --- PERSON " << i << " --- " << endl;
+		cout << "Name: " << people[i].name << endl;
+		cout << "Age: " << people[i].age << endl;
+		cout << " ---------------- " << endl; 
+	}
+
+	//return 0;
 }
