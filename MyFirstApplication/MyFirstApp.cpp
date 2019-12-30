@@ -1,22 +1,31 @@
 #include <iostream>
 #include <string>
-#include <vector>
-
 
 using namespace std;
 
+int add(int num1, int num2) {
+	return num1 + num2;
+}
+
+void print(string text) {
+	cout << text << endl;
+}
+
+void print(int num1) {
+	cout << num1 << endl;
+}
+
+void print(int num1, int num2) {
+	cout << num1 << " " << num2 << endl;
+}
+
 int main() {
-	vector<string> my_array = {"Hello", "World"};
-	
-	// instantiate a counter
-	// test counter against condition
-	// increase counter
+	int result = add(52, 131);
 
-	for (int i = 0; i < my_array.size(); i++) {
-		cout << "At: " << my_array[i] << endl;
-	}
-
-	cout << my_array[my_array.size() - 1] << endl;
+	cout << result << endl;
+	print("Hello world");
+	print(32);
+	print(45, 65);
 
 	return 0;
 }
