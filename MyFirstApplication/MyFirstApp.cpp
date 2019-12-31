@@ -1,39 +1,29 @@
 #include <iostream>
 #include <string>
-#include <vector>
 
 using namespace std;
 
-struct Person {
-	string name;
-	int age;
-};
 
 int main() {
-	Person person1;
+	// var 2 is CREATED with value of 200
+	int var2 = 200;
 
-	person1.name = "Nick";
-	person1.age = 30;
+	// var 3 is CREATED POINTING to the address space of var2
+	int* var3 = &var2;
 
-	Person person2;
+	int var4 = var2;
 
-	person2.name = "Ted";
-	person2.age = 46;
+	// We can now update var 2
+	var2 = 500;
 
-	vector<Person> people = { person1, person2 };
+	cout << "Var2 Address Location: " << &var2 << endl;
+	cout << "Var4 Value: " << var4 << endl;
 
-	Person person3;
-	person3.name = "Sally";
-	person3.age = 35;
+	// And when we DEREFERENCE var3 to toggle between displaying
+	// Address space and value AT that address space,
+	// var 3 simply points to the address space of var 2,
+	// thus, getting the NEW and updated value stored at var2
+	cout << "Var3 Value: " << *var3 << endl;
 
-	people.push_back(person3);
-
-	for (int i = 0; i < people.size(); i++) {
-		cout << " --- PERSON " << i << " --- " << endl;
-		cout << "Name: " << people[i].name << endl;
-		cout << "Age: " << people[i].age << endl;
-		cout << " ---------------- " << endl; 
-	}
-
-	//return 0;
+	return 0;
 }
